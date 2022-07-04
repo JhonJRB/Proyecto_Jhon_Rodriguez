@@ -1,0 +1,12 @@
+{%extends "padre.html"%}
+
+{%block bloque1%}
+<h2> Cargar Avatar</h2>
+<form method="POST" enctype="multipart/form-data">
+{%csrf_token%}
+{{form.as_p}}
+
+<input type="submite" value="Actualizar">
+</form>
+
+{%endblock%}

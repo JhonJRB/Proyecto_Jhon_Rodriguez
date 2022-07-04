@@ -1,0 +1,23 @@
+{%extends 'padre.html'%}
+
+{%block bloque1%}
+
+<main>
+    <form action="{%url 'editar_chofer' chofer.id%}" method="POST">
+        {%csrf_token%}   
+        
+        <p>Id  {{chofer.id}} </p>
+        <p> Nombre</p> 
+        <input placeholder="{{chofer.nombre}}" type="text" name="nombre">
+        <p> Apellido</p>
+        <input placeholder="{{chofer.apellido}}" type="text" name="apellido">
+        <p> Fecha nacimiento </p>
+        <input placeholder="{{chofer.nacimiento}}" type="date" name="nacimiento"> 
+        <p></p>
+        <p> ID Movil a cargo</p>
+        <input placeholder="{{chofer.movil_a_cargo}}" type="number" name="movil_a_cargo">
+        <input type="submit" value="Enviar">
+    </form>
+ </main>
+
+{%endblock%}

@@ -1,0 +1,23 @@
+{%extends 'padre.html'%}
+
+{%block bloque1%}
+
+<main>
+    <form action="{%url 'editar_cliente' cliente.id%}" method="POST">
+        {%csrf_token%}   
+        
+        <p>Id  {{cliente.id}} </p>
+        <p> Nombre</p> 
+        <input placeholder="{{cliente.nombre}}" type="text" name="nombre"> 
+        <p> Apellido</p> 
+        <input placeholder="{{cliente.apellido}}" type="text" name="apellido">
+        <p> Registro</p>
+        <input placeholder="{{cliente.registro}}" type="date" name="registro"> 
+        <p></p>
+        <p> ID Movil asignado</p>
+        <input placeholder="{{cliente.movil_asignado}}" type="number" name="movil_asignado">
+        <input type="submit" value="Enviar">
+    </form>
+ </main>
+
+{%endblock%}

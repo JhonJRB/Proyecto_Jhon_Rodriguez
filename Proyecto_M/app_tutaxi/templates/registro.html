@@ -1,0 +1,14 @@
+{%extends "padre.html"%}
+
+{%block bloque1%}
+        <h1>{{mensaje}}: {{usuario}}</h1>
+        <form action="" method="POST">
+            {%csrf_token%}
+            {{form.as_p}}
+            {%if usuario is null%}
+        <button type="submit">  Registrarse</button>
+            {%endif%}
+        
+        </form>
+{%endblock%}
+     

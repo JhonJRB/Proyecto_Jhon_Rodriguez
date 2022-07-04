@@ -1,0 +1,15 @@
+{%extends 'padre.html'%}
+
+{%block bloque1%}
+
+<main>
+
+    <form action="{% url 'traer_cliente'%}" method="POST">
+        {%csrf_token%}
+        <h5> Nombre del cliente</h5>
+        <input type="text" name="nombre_cliente">
+        <input type="submit" value="Buscar">
+    </form>
+</main>
+
+{%endblock%}

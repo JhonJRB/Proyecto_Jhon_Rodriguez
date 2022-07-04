@@ -1,0 +1,23 @@
+{%extends 'padre.html'%}
+
+{%block bloque1%}
+
+<main>
+    <form action="{%url 'editar_movil' movil.id %}" method="POST">
+        {%csrf_token%}   
+        
+        <p>Id  {{movil.id}} </p>
+        <p> Patente</p> 
+        <input placeholder="{{movil.patente}}" type="text" name="patente">
+        <p> Marca</p>
+        <input placeholder="{{movil.marca}}" type="text" name="marca">
+        <p>  Modelo </p>
+        <input placeholder="{{movil.modelo}}" type="date" name="modelo"> 
+        <p></p>
+        <p> Chofer asignado </p>
+        <input placeholder="{{movil.chofer_asignado}}" type="number" name="chofer_asigando">
+        <input type="submit" value="Enviar">
+    </form>
+ </main>
+
+{%endblock%}

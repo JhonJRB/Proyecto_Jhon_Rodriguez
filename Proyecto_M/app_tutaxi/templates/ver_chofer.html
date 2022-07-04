@@ -1,0 +1,54 @@
+{%extends 'padre.html'%}
+
+{%block bloque1%}
+<main>
+    {%if chofer_registrado%}
+    <h2>{{chofer_registrado}} se registro correctamente</h2>
+    
+    {%elif chofer%}
+    <h2>Conductores Registrados</h2>
+   
+        <table class="table table-success table-striped"> 
+            <thead class="table table-dark table-striped">
+                <tr>
+                    <th> Id</th>
+                    <th> Nombre</th>
+                    <th> Apellido</th>
+                    <th> Nacimiento</th>
+                    <th> Movil a cargo</th>
+                    {%if request.user.is_authenticated%}
+                    <th> </th>
+                    <th> </th>
+                    {%endif%}
+                </tr>
+            </thead>
+            {%for i in chofer%}
+                <tbody>
+                    <tr>
+                        <td> {{i.id}} </td>
+                        <td> {{i.nombre}} </td>
+                        <td>  {{i.apellido }} </td>
+                        <td>  {{i.nacimiento }} </td>
+                        <td>  {{i.movil_a_cargo}} </td>
+                        {%if request.user.is_authenticated%}
+                        <td> <a href="{% url 'eliminar_chofer' i.id %}" > Eliminar</a> </td>
+                        <td> <a href="{% url 'editar_chofer' i.id %}" > Editar</a> </td>
+                        {%endif%}
+                    </tr>
+                </tbody>
+            {%endfor%}
+        </table>
+    {%elif chofer_registrado == false %}
+        <h2>El chofer ingresado no existe!! </h2>  
+   
+    {%endif%}
+    <button> 
+        <a href="{% url 'cargar_chofer' %}"> Add Chofer</a> 
+    </button>
+    <button>
+        <a  href="{% url 'buscar_chofer' %}"> Buscar Chofer</a>
+    </button>
+
+</main>
+{%endblock%}
+
