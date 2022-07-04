@@ -6,5 +6,7 @@ visualizar la data libremente, y si se desea realizar CRUD es necesario ingresar
 El usuario cuenta con un avatar, y si lo desea puede modificar algunos datos de su usuario (email, password).
 
 Urls home: http://127.0.0.1:8000/
+User: Jhon
+Pass: CoderCoder
 
 Participantes en la creacion de la app: Jhon Rodriguez !!!
